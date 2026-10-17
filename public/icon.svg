@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <linearGradient id="zapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+  <rect width="504" height="504" x="4" y="4" rx="124" fill="none" stroke="url(#accentGrad)" stroke-width="4" stroke-opacity="0.4" />
+
+  <!-- Candlestick chart grid hint -->
+  <g opacity="0.15" stroke="#94a3b8" stroke-width="2">
+    <line x1="80" y1="180" x2="432" y2="180" />
+    <line x1="80" y1="260" x2="432" y2="260" />
+    <line x1="80" y1="340" x2="432" y2="340" />
+  </g>
+
+  <!-- Iron Condor Wings Geometry -->
+  <path d="M 96 340 L 190 220 L 322 220 L 416 340" fill="none" stroke="url(#accentGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.8" />
+  <polygon points="190,220 322,220 256,140" fill="#6366f1" fill-opacity="0.25" />
+
+  <!-- Central Dynamic Zap Symbol -->
+  <g filter="url(#glow)">
+    <polygon points="275,110 165,275 245,275 235,402 347,235 267,235" fill="url(#zapGrad)" stroke="#ffffff" stroke-width="6" stroke-linejoin="round" />
+  </g>
+
+  <!-- Subtle pulse dots -->
+  <circle cx="190" cy="220" r="10" fill="#10b981" />
+  <circle cx="322" cy="220" r="10" fill="#10b981" />
+  <circle cx="96" cy="340" r="8" fill="#6366f1" />
+  <circle cx="416" cy="340" r="8" fill="#6366f1" />
+</svg>

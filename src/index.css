@@ -1,0 +1,287 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #0b1120;
+    --text-main: #f8fafc;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(100, 116, 139, 0.4);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 116, 139, 0.7);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Light Theme overrides for app container when .theme-light is active */
+  .theme-light {
+    --bg-main: #f1f5f9;
+    --text-main: #0f172a;
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+  }
+
+  .theme-light .bg-slate-950 {
+    background-color: #f8fafc !important;
+  }
+
+  .theme-light .bg-slate-900 {
+    background-color: #ffffff !important;
+  }
+
+  .theme-light .bg-slate-900\/80,
+  .theme-light .bg-slate-900\/90,
+  .theme-light .bg-slate-900\/70,
+  .theme-light .bg-slate-900\/60,
+  .theme-light .bg-slate-900\/50,
+  .theme-light .bg-slate-900\/40,
+  .theme-light .bg-slate-900\/30 {
+    background-color: #ffffff !important;
+  }
+
+  /* Target opportunity cards and inner metric panels */
+  .theme-light .bg-slate-950\/70,
+  .theme-light .bg-slate-950\/60,
+  .theme-light .bg-slate-950\/50,
+  .theme-light .bg-slate-950\/80,
+  .theme-light .bg-slate-950\/90 {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  /* Inner metric boxes inside cards (e.g. Est Profit Lock container) */
+  .theme-light .bg-slate-950\/70 .bg-slate-900\/80,
+  .theme-light .bg-slate-900 .bg-slate-900\/80,
+  .theme-light .bg-slate-950\/70 .bg-slate-900,
+  .theme-light .bg-slate-900 .bg-slate-950 {
+    background-color: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  .theme-light .bg-slate-800 {
+    background-color: #f1f5f9 !important;
+  }
+
+  .theme-light .bg-slate-800\/90,
+  .theme-light .bg-slate-800\/80,
+  .theme-light .bg-slate-800\/50,
+  .theme-light .bg-slate-800\/60,
+  .theme-light .bg-slate-800\/40,
+  .theme-light .bg-slate-800\/30,
+  .theme-light .bg-slate-800\/20 {
+    background-color: #f1f5f9 !important;
+  }
+
+  .theme-light .hover\:bg-slate-800:hover,
+  .theme-light .hover\:bg-slate-800\/60:hover,
+  .theme-light .hover\:bg-slate-700:hover {
+    background-color: #e2e8f0 !important;
+    color: #0f172a !important;
+  }
+
+  .theme-light .border-slate-800,
+  .theme-light .border-slate-800\/50,
+  .theme-light .border-slate-800\/60,
+  .theme-light .border-slate-800\/80,
+  .theme-light .border-slate-700,
+  .theme-light .border-slate-700\/60,
+  .theme-light .divide-slate-800,
+  .theme-light .divide-slate-800\/50,
+  .theme-light .divide-slate-800\/80,
+  .theme-light .divide-slate-800\/40 {
+    border-color: #e2e8f0 !important;
+  }
+
+  /* Card and container shadows in light mode */
+  .theme-light .bg-slate-900,
+  .theme-light .bg-slate-950\/70,
+  .theme-light .rounded-xl,
+  .theme-light .rounded-2xl {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+  }
+
+  /* Clean Typography Overrides */
+  .theme-light .text-white {
+    color: #0f172a !important;
+  }
+
+  .theme-light .text-slate-100,
+  .theme-light .text-slate-200 {
+    color: #0f172a !important;
+  }
+
+  .theme-light .text-slate-300 {
+    color: #334155 !important;
+  }
+
+  .theme-light .text-slate-400 {
+    color: #64748b !important;
+  }
+
+  .theme-light .text-slate-500 {
+    color: #64748b !important;
+  }
+
+  /* Buttons & Badges: Fix IN TRADE (Executed) status button in Light Mode */
+  .theme-light .bg-emerald-950\/70,
+  .theme-light .bg-emerald-950\/80,
+  .theme-light .bg-emerald-950\/90 {
+    background-color: #ecfdf5 !important;
+    border-color: #6ee7b7 !important;
+    color: #047857 !important;
+  }
+  .theme-light .bg-emerald-950\/70 span,
+  .theme-light .bg-emerald-950\/70 svg {
+    color: #047857 !important;
+  }
+
+  /* Active navigation tabs and primary CTA buttons retain white text */
+  .theme-light .bg-indigo-600,
+  .theme-light .bg-indigo-600 .text-white,
+  .theme-light .bg-indigo-600 span,
+  .theme-light .bg-emerald-600,
+  .theme-light .bg-rose-600,
+  .theme-light .bg-gradient-to-tr .text-white,
+  .theme-light .bg-gradient-to-r .text-white,
+  .theme-light .bg-indigo-600 * {
+    color: #ffffff !important;
+  }
+
+  /* Fix Dark Gradients on Banners in Settings & Dashboard */
+  .theme-light .bg-gradient-to-r.from-emerald-950\/80,
+  .theme-light .bg-gradient-to-r.from-emerald-950\/90,
+  .theme-light .bg-gradient-to-r.from-emerald-950 {
+    background: linear-gradient(to right, #ecfdf5, #ffffff, #f0fdf4) !important;
+    border-color: #a7f3d0 !important;
+  }
+
+  .theme-light .bg-gradient-to-r.from-amber-950\/80,
+  .theme-light .bg-gradient-to-r.from-amber-950\/90,
+  .theme-light .bg-gradient-to-r.from-amber-950 {
+    background: linear-gradient(to right, #fffbeb, #ffffff, #fef3c7) !important;
+    border-color: #fde68a !important;
+  }
+
+  .theme-light .bg-gradient-to-r.from-rose-950\/80,
+  .theme-light .bg-gradient-to-r.from-rose-950\/90,
+  .theme-light .bg-gradient-to-r.from-rose-950 {
+    background: linear-gradient(to right, #fff1f2, #ffffff, #ffe4e6) !important;
+    border-color: #fecdd3 !important;
+  }
+
+  /* Keep positive/negative/alert colors crisp and readable on light backgrounds */
+  .theme-light .bg-emerald-950\/40,
+  .theme-light .bg-emerald-950\/30,
+  .theme-light .bg-emerald-950\/60 {
+    background-color: #ecfdf5 !important;
+  }
+  .theme-light .border-emerald-800\/50,
+  .theme-light .border-emerald-700,
+  .theme-light .border-emerald-500\/50,
+  .theme-light .border-emerald-500\/30 {
+    border-color: #a7f3d0 !important;
+  }
+  .theme-light .text-emerald-300,
+  .theme-light .text-emerald-400,
+  .theme-light .text-emerald-500 {
+    color: #047857 !important;
+  }
+
+  .theme-light .bg-rose-950\/40,
+  .theme-light .bg-rose-950\/30,
+  .theme-light .bg-rose-950\/60,
+  .theme-light .bg-rose-950\/80 {
+    background-color: #fff1f2 !important;
+  }
+  .theme-light .border-rose-800\/50,
+  .theme-light .border-rose-700,
+  .theme-light .border-rose-500\/50,
+  .theme-light .border-rose-500\/30 {
+    border-color: #fecdd3 !important;
+  }
+  .theme-light .text-rose-300,
+  .theme-light .text-rose-400,
+  .theme-light .text-rose-500 {
+    color: #be123c !important;
+  }
+
+  .theme-light .bg-amber-950\/40,
+  .theme-light .bg-amber-950\/30,
+  .theme-light .bg-amber-950\/60,
+  .theme-light .bg-amber-950\/80 {
+    background-color: #fffbeb !important;
+  }
+  .theme-light .border-amber-800\/50,
+  .theme-light .border-amber-500\/50,
+  .theme-light .border-amber-500\/30 {
+    border-color: #fde68a !important;
+  }
+  .theme-light .text-amber-300,
+  .theme-light .text-amber-400 {
+    color: #b45309 !important;
+  }
+
+  .theme-light .bg-indigo-950\/40,
+  .theme-light .bg-indigo-950\/30,
+  .theme-light .bg-indigo-950\/60 {
+    background-color: #eef2ff !important;
+  }
+  .theme-light .border-indigo-800\/50,
+  .theme-light .border-indigo-500\/30 {
+    border-color: #c7d2fe !important;
+  }
+  .theme-light .text-indigo-300,
+  .theme-light .text-indigo-400 {
+    color: #4338ca !important;
+  }
+
+  /* Form Elements */
+  .theme-light input,
+  .theme-light select,
+  .theme-light textarea {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  .theme-light input::placeholder,
+  .theme-light textarea::placeholder {
+    color: #94a3b8 !important;
+  }
+
+  /* Tables */
+  .theme-light table thead,
+  .theme-light table thead tr {
+    background-color: #f8fafc !important;
+  }
+  .theme-light table thead th {
+    color: #475569 !important;
+  }
+  .theme-light table tbody tr:hover {
+    background-color: #f8fafc !important;
+  }
+}
+

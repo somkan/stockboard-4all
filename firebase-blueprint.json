@@ -1,0 +1,87 @@
+{
+  "entities": {
+    "users": {
+      "title": "User",
+      "description": "User profile record",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "User email address"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User display name"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of user creation"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of user profile update"
+        }
+      },
+      "required": ["email", "createdAt"]
+    },
+    "accessCodes": {
+      "title": "UserAccessCode",
+      "description": "Fyers API v3 access code and authentication token details stored against the user",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth user ID of the owner"
+        },
+        "userEmail": {
+          "type": "string",
+          "description": "Email address of the authenticated user"
+        },
+        "accessCode": {
+          "type": "string",
+          "description": "Raw authorization code, redirect URL, or token code"
+        },
+        "accessToken": {
+          "type": "string",
+          "description": "Active Fyers API v3 access token string"
+        },
+        "expiresAt": {
+          "type": "number",
+          "description": "Expiration timestamp in epoch milliseconds"
+        },
+        "isValid": {
+          "type": "boolean",
+          "description": "Whether the access code/token is currently active and valid"
+        },
+        "tokenType": {
+          "type": "string",
+          "description": "Type of authentication token"
+        },
+        "fyId": {
+          "type": "string",
+          "description": "Associated Fyers Client ID"
+        },
+        "source": {
+          "type": "string",
+          "description": "Authentication source (totp, redirect_url, manual, oauth_callback)"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp when the access code was saved or refreshed"
+        }
+      },
+      "required": ["userId", "accessToken", "isValid"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "users",
+      "description": "User profile documents"
+    },
+    "/users/{userId}/access_codes/{codeId}": {
+      "schema": "accessCodes",
+      "description": "User access codes and Fyers authentication tokens stored against the user"
+    }
+  }
+}
+

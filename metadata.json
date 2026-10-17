@@ -1,0 +1,6 @@
+{
+  "name": "Fyers Iron Condor Trading System",
+  "description": "Automated options trading system with Short Straddle to Iron Condor dynamic adjustments, Fyers API integration, Paper/Live execution, risk management engine, and interactive dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
